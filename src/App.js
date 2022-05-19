@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import ButtonContainer from './ButtonContainer';
+import ValueContainer from './ValueContainer/ValueContainer';
+import { useAddCharacter } from './hooks'
 
 function App() {
+  const [currentOperand, onAddCharacter] = useAddCharacter()
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='parent'>
+      <div className='child'>
+        <div className='value-container'>
+          <ValueContainer value={currentOperand} />
+        </div>
+        <ButtonContainer setValue={(value) => onAddCharacter(value)} />
+      </div>
     </div>
   );
 }

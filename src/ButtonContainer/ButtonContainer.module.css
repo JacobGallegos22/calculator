@@ -1,0 +1,10 @@
+.root {
+    height: 60%;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    padding-top: 20px;
+    
+}
